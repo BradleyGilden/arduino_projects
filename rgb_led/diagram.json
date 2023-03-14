@@ -1,0 +1,79 @@
+{
+	"version": 1,
+	"author": "Senpai9000",
+	"editor": "wokwi",
+	"parts": [
+	  { "type": "wokwi-arduino-uno", "id": "uno", "top": 0, "left": 0, "attrs": {} },
+	  {
+		"type": "wokwi-resistor",
+		"id": "r1",
+		"top": -140.96,
+		"left": 140.63,
+		"rotate": 90,
+		"attrs": { "value": "220" }
+	  },
+	  {
+		"type": "wokwi-resistor",
+		"id": "r2",
+		"top": -149.49,
+		"left": 103.84,
+		"rotate": 90,
+		"attrs": { "value": "220" }
+	  },
+	  {
+		"type": "wokwi-resistor",
+		"id": "r3",
+		"top": -162.73,
+		"left": 55.76,
+		"rotate": 90,
+		"attrs": { "value": "220" }
+	  },
+	  {
+		"type": "wokwi-rgb-led",
+		"id": "rgb1",
+		"top": -257.44,
+		"left": 107.5,
+		"attrs": { "common": "cathode" }
+	  },
+	  {
+		"type": "wokwi-slide-potentiometer",
+		"id": "pot1",
+		"top": -100.23,
+		"left": 305.6,
+		"attrs": { "travelLength": "45" }
+	  },
+	  {
+		"type": "wokwi-slide-potentiometer",
+		"id": "pot2",
+		"top": 28.27,
+		"left": 304.27,
+		"attrs": { "travelLength": "45" }
+	  },
+	  {
+		"type": "wokwi-slide-potentiometer",
+		"id": "pot3",
+		"top": 150.3,
+		"left": 303.46,
+		"attrs": { "travelLength": "45" }
+	  }
+	],
+	"connections": [
+	  [ "r3:1", "rgb1:R", "green", [ "h0" ] ],
+	  [ "r2:1", "rgb1:G", "green", [ "h0" ] ],
+	  [ "r1:1", "rgb1:B", "green", [ "h0" ] ],
+	  [ "uno:GND.1", "rgb1:COM", "black", [ "v-179.33", "h11.52" ] ],
+	  [ "r1:2", "uno:3", "blue", [ "h0" ] ],
+	  [ "uno:5", "r2:2", "green", [ "v-73.72", "h-67.95" ] ],
+	  [ "r3:2", "uno:6", "red", [ "h1.65", "v109.05", "h107.48" ] ],
+	  [ "uno:5V", "pot1:VCC", "orange", [ "v28.51", "h114.1", "v-278.24" ] ],
+	  [ "uno:5V", "pot2:VCC", "orange", [ "v33.92", "h120.59", "v-159.15" ] ],
+	  [ "uno:5V", "pot3:VCC", "orange", [ "v39.33", "h130.34", "v-38.97" ] ],
+	  [ "uno:GND.2", "pot3:GND", "black", [ "v52.32", "h368.76", "v-51.97" ] ],
+	  [ "uno:GND.2", "pot2:GND", "black", [ "v77.22", "h390.41", "v-200.29" ] ],
+	  [ "uno:GND.2", "pot1:GND", "black", [ "v101.04", "h414.23", "v-361.6" ] ],
+	  [ "uno:A0", "pot3:SIG", "yellow", [ "v0" ] ],
+	  [ "uno:A1", "pot2:SIG", "yellow", [ "v0" ] ],
+	  [ "uno:A2", "pot1:SIG", "yellow", [ "v0" ] ]
+	],
+	"serialMonitor": { "display": "auto", "newline": "none" }
+  }
